@@ -1,0 +1,69 @@
+CREATE TABLE `advogados` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `nome` varchar(225) NOT NULL,
+  `perfil` varchar(225) NOT NULL,
+  `numOAB` varchar(225) NOT NULL,
+  `email` varchar(225) NOT NULL,
+  `senha` varchar(225) NOT NULL,
+  `telefone` varchar(225) NOT NULL,
+  PRIMARY KEY (`id`)
+) 
+
+CREATE TABLE `recepcionista` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `nome` varchar(225) NOT NULL,
+  `perfil` varchar(225) NOT NULL,
+  `email` varchar(225) NOT NULL,
+  `senha` varchar(225) NOT NULL,
+  `telefone` varchar(225) NOT NULL,
+  `id_advogado` int NOT NULL,
+  CONSTRAINT fk_id_advogado_recepcionistas FOREIGN KEY (id_advogado) REFERENCES advogados (id) ON DELETE CASCADE,
+  `nome_advogado` varchar(225),
+  PRIMARY KEY (`id`)
+) 
+
+CREATE TABLE IF NOT EXISTS `clientes` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `nome` varchar(225) NOT NULL,
+  `cpf` varchar(225) NOT NULL,
+  `nacionalidade` varchar(225) NOT NULL,
+  `estadoCivil` varchar(225) NOT NULL,
+  `profissao` varchar(225) NOT NULL,
+  `endereco` varchar(225) NOT NULL,
+  `dataNascimento` varchar(225) NOT NULL,
+  `telefone` varchar(225) NOT NULL,
+  `celular` varchar(225) NOT NULL,
+  `email` varchar(225) NOT NULL,
+  `id_advogado` int NOT NULL,
+  CONSTRAINT fk_id_advogado_clientes FOREIGN KEY (id_advogado) REFERENCES advogados (id) ON DELETE CASCADE,
+  `nome_advogado` varchar(225) NOT NULL,
+  `arquivo` BLOB,
+  `procuracoes` BLOB,
+  PRIMARY KEY (`id`)
+);
+
+CREATE TABLE IF NOT EXISTS `processo` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `dataProcesso` varchar(225) NOT NULL,
+  `horaProcesso` varchar(225) NOT NULL,
+  `numProcesso` varchar(225) NOT NULL,
+  `vara` varchar(225) NOT NULL,
+  `id_cliente` int NOT NULL,
+  CONSTRAINT fk_id_cliente_processo FOREIGN KEY (id_cliente) REFERENCES clientes (id) ON DELETE CASCADE,
+  `nome_cliente` varchar(225) NOT NULL,
+  PRIMARY KEY (`id`)
+);
+
+CREATE TABLE IF NOT EXISTS tarefa (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  title VARCHAR(255) NOT NULL,
+  start DATETIME NOT NULL,
+  end DATETIME,
+  allDay BOOLEAN NOT NULL DEFAULT 0,
+  descricao VARCHAR(255) NOT NULL,
+  id_advogado VARCHAR(225),
+  nome_advogado VARCHAR(225),
+  id_recep VARCHAR(225),
+  nome_recep VARCHAR(225)
+);
+

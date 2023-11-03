@@ -1,0 +1,162 @@
+
+.App {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+}
+
+.AppHeader{
+  height: 65px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 25px;
+  border-bottom: 1px solid rgb(219, 219, 219);
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.AppFooter{
+  height: 30px;
+  background-image: linear-gradient(to right, rgba(255,255,255,1), rgba(22, 119, 255, 1));
+
+}
+
+.PageContent{
+  padding-left: 12px;
+}
+
+.SideMenuAndPageContent{
+  flex: 1;
+  justify-content: flex-start;
+  align-items: flex-start;
+  
+}
+
+#logOut{
+  background-color: rgb(22, 119, 255, 1);
+  border: none;
+  padding: 12px;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 500;
+
+}
+
+#logOut:hover{
+  transition: 0.5s all;
+  background-color: rgb(22, 119, 255, 0.6);
+
+}
+
+
+/*LOGIN*/
+
+.login--title{
+  color: #000000;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-control{
+  margin: 15px 0;
+}
+
+.login-box{
+position: absolute;
+top: 10%;
+left: 30%;
+}
+
+.login--container{
+  width: 500px;
+  margin: 60px auto 0px;
+  padding: 40px 80px 120px;
+  border: solid 1px rgb(22, 119, 255, 0.6);
+  border-radius: 10px;  
+  background-color: #fff;
+  box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    
+}
+
+.paragraph{
+  color: #000000;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 20px;
+
+}
+
+.buttonEntrar{
+  justify-content: center;
+  align-items: center;
+
+}
+
+.login--button{
+  font-size: 20px;
+  font-weight: 600;
+  width: 100%;
+  background-color: rgb(22, 119, 255, 1);
+
+}
+
+/*LOGIN*/
+
+/*CADASTRO DE CLIENTES*/
+
+.title-cadcliente {
+  margin: 45px 0 20px 0;
+  
+}
+
+.title-cadfuncionario{
+  margin: 45px 0 20px 0;
+}
+
+.title-cadprocesso{
+  margin: 45px 0 20px 0;
+}
+
+.cadcliente-row1{
+  width: 1070px;
+}
+
+.cadcliente--button{
+  background-color: transparent;
+  border: 1px solid rgba(22, 119, 255, 1);
+  color: rgba(22, 119, 255, 1);
+  margin-top: 20px;
+}
+
+.cadcliente--button:hover{
+  background-color: transparent;
+  color: rgba(22, 119, 255, 1);
+
+}
+
+
+.botãocliente{
+  background-color: rgba(22, 119, 255, 1);
+  font-weight: 500;
+  margin-bottom: 30px;
+
+}
+
+.botãofuncionario{
+  background-color: rgba(22, 119, 255, 1);
+  font-weight: 500;
+}
+
+.botãocliente:hover{
+  background-color: rgba(22, 119, 255, 1);
+
+}
+
+.cadfuncadv{
+  width: 1070px;
+} 
+
+/*CADASTRO DE CLIENTES*/
+
